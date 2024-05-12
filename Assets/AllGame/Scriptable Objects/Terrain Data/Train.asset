@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9465f1085e0e8e34ea40f86434c245a8, type: 3}
+  m_Name: Train
+  m_EditorClassIdentifier: 
+  posibleTerrain:
+  - {fileID: 3523604356741280302, guid: 125ecf0cdd5d3834190e68b67879dee4, type: 3}
+  maxInSuccesion: 1
