@@ -47,8 +47,6 @@ public class MainMenuController : MonoBehaviour
         {
             Debug.LogError("PersistentObject not found in the scene.");
         }
-
-        eventSystem = GameObject.Find("EventSystem");
     }
 
     void OnSubmit(InputAction.CallbackContext context)
