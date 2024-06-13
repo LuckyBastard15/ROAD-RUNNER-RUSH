@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 34400017968178505}
   - component: {fileID: 7680025143119284757}
   - component: {fileID: -5996636314764208993}
+  - component: {fileID: 4512516202618533892}
+  - component: {fileID: 269737707519779514}
   m_Layer: 0
   m_Name: Tram_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374151c4439aa834fba0cc53d7a24fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restartMenu: {fileID: 0}
 --- !u!65 &7680025143119284757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113,7 +116,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -133,3 +136,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 9
   isLog: 0
+--- !u!114 &4512516202618533892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449013696123218036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ff0ade7c313df4c87b68f06b4dd463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionSound: {fileID: 0}
+--- !u!64 &269737707519779514
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449013696123218036}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4768165118932902637, guid: 8e1d15c43939c094db4f851472253a49, type: 3}

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - CarDestroyer
+  - PowerUp
+  - Enemy
+  - InvinciblePlayer
+  - Obstacle
+  - LoadingScreen
   layers:
   - Default
   - TransparentFX

@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3721158506415666494}
   m_Layer: 0
   m_Name: Agua
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374151c4439aa834fba0cc53d7a24fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restartMenu: {fileID: 0}
 --- !u!114 &3721158506415666494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,11 +189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d95cd3df71c7d4db65329bdd48c4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 7126733580711384203, guid: edb7f9cd036617940b9a1d909088927f, type: 3}
+  carPrefab: {fileID: 7126733580711384203, guid: edb7f9cd036617940b9a1d909088927f, type: 3}
   spawnPos: {fileID: 4491704194421883419}
   minSeparationTime: 1
   maxSeparationTime: 6
   isRightSide: 1
+  destroyTime: 14
 --- !u!1 &6321159245331863724
 GameObject:
   m_ObjectHideFlags: 0

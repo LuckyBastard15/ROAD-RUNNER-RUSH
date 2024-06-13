@@ -6124,7 +6124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d95cd3df71c7d4db65329bdd48c4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 3449013696123218036, guid: 2983cf9d9f35523479aa9a7b07a61360, type: 3}
+  carPrefab: {fileID: 3449013696123218036, guid: 2983cf9d9f35523479aa9a7b07a61360, type: 3}
   spawnPos: {fileID: 2137840412786420178}
   minSeparationTime: 1
   maxSeparationTime: 10

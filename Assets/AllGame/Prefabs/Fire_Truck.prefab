@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8189486771420347650}
   - component: {fileID: 243355573786409076}
   - component: {fileID: 145869556725384323}
+  - component: {fileID: 4118606200092158074}
   m_Layer: 0
   m_Name: Fire_Truck
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,3 +133,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  isLog: 0
+--- !u!114 &4118606200092158074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263889859488073007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ff0ade7c313df4c87b68f06b4dd463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastDistance: 3
+  detectionSound: {fileID: 8300000, guid: ce86a54ca355763418b7b7914b91ae9f, type: 3}
