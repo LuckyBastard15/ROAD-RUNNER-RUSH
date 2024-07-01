@@ -61,7 +61,7 @@ public class MenuController : MonoBehaviour
         {
             Debug.LogWarning("PlayerInput component not found.");
         }
-        ShowTutorial();
+        //ShowTutorial();
     }
 
     public void TogglePauseMenu(InputAction.CallbackContext context)
