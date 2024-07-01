@@ -7,12 +7,15 @@ public class MainMenuController : MonoBehaviour
 {
     public GameObject startButton;
     public GameObject quitButton;
-    public GameObject firstSelectedButton;
+    public GameObject settingsButton;
+    public GameObject mainMenuCanvas;
+    public GameObject settingsCanvas;
+    public GameObject firstSelectedButtonMainMenu;
+    public GameObject firstSelectedButtonSettings;
 
     private PlayerInput playerInput;
     private LoadingScreenController loadingScreenController;
-    private GameObject eventSystem; // Referencia al EventSystem de la escena principal
-    private PersistentObject persistentObject; // Referencia al objeto persistente
+    private PersistentObject persistentObject;
 
     void Start()
     {
@@ -23,21 +26,14 @@ public class MainMenuController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("PlayerInput component not found on the GameObject or its children.");
-            return;
         }
 
-        // Verificar que los botones están asignados
-        if (startButton == null || quitButton == null || firstSelectedButton == null)
+        if (startButton == null || quitButton == null || settingsButton == null || firstSelectedButtonMainMenu == null || firstSelectedButtonSettings == null)
         {
-            Debug.LogError("One or more buttons are not assigned in the inspector.");
-            return;
         }
 
-        // Establecer el primer botón seleccionado
-        EventSystem.current.SetSelectedGameObject(firstSelectedButton);
+        EventSystem.current.SetSelectedGameObject(firstSelectedButtonMainMenu);
 
-        // Encontrar el objeto persistente y obtener la referencia al LoadingScreenController
         persistentObject = FindObjectOfType<PersistentObject>();
         if (persistentObject != null)
         {
@@ -45,11 +41,10 @@ public class MainMenuController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("PersistentObject not found in the scene.");
         }
     }
 
-    void OnSubmit(InputAction.CallbackContext context)
+    private void OnSubmit(InputAction.CallbackContext context)
     {
         GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
         if (selectedObject == startButton)
@@ -60,17 +55,15 @@ public class MainMenuController : MonoBehaviour
         {
             QuitGame();
         }
+        else if (selectedObject == settingsButton)
+        {
+            OpenSettings();
+        }
     }
 
     public void StartGame()
     {
         Time.timeScale = 1f;
-
-        // Desactivar el EventSystem de la escena principal
-        if (eventSystem != null)
-        {
-            eventSystem.SetActive(false);
-        }
 
         if (loadingScreenController != null)
         {
@@ -78,7 +71,6 @@ public class MainMenuController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("LoadingScreenController not found in the scene.");
             SceneManager.LoadScene("Game");
         }
     }
@@ -89,6 +81,20 @@ public class MainMenuController : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    public void OpenSettings()
+    {
+        mainMenuCanvas.SetActive(false);
+        settingsCanvas.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstSelectedButtonSettings);
+    }
+
+    public void BackToMainMenu()
+    {
+        settingsCanvas.SetActive(false);
+        mainMenuCanvas.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstSelectedButtonMainMenu);
     }
 
     void OnDisable()
